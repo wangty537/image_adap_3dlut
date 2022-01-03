@@ -1,0 +1,17 @@
+import argparse
+
+parser = argparse.ArgumentParser()
+parser.add_argument("--epoch", type=int, default=80, help="epoch to start training from, 0 starts from scratch, >0 starts from saved checkpoints")
+parser.add_argument("--n_epochs", type=int, default=190, help="total number of epochs of training")
+#parser.add_argument("--dataset_name", type=str, default="fiveK", help="name of the dataset")
+#parser.add_argument("--input_color_space", type=str, default="sRGB", help="input color space: sRGB or XYZ")
+#parser.add_argument("--batch_size", type=int, default=1, help="size of the batches")
+parser.add_argument("--lr", type=float, default=0.0001*2, help="adam: learning rate")
+parser.add_argument("--b1", type=float, default=0.9, help="adam: decay of first order momentum of gradient")
+parser.add_argument("--b2", type=float, default=0.999, help="adam: decay of first order momentum of gradient")
+parser.add_argument("--lambda_smooth", type=float, default=0.0001/2, help="smooth regularization")
+parser.add_argument("--lambda_monotonicity", type=float, default=10.0/2, help="monotonicity regularization")
+parser.add_argument("--n_cpu", type=int, default=1, help="number of cpu threads to use during batch generation")
+#parser.add_argument("--checkpoint_interval", type=int, default=1, help="interval between model checkpoints")
+#parser.add_argument("--output_dir", type=str, default="LUTs/paired/fiveK_480p_3LUT_sm_1e-4_mn_10", help="path to save model")
+opt = parser.parse_args()
